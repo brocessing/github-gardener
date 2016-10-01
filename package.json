@@ -1,0 +1,22 @@
+{
+  "name": "gh-grass",
+  "version": "1.0.0",
+  "description": "automatic gardener to take care of your Github Grass (aka your profile's contribution graph)",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brocessing/bro-grass.git"
+  },
+  "author": "Brocessing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brocessing/bro-grass/issues"
+  },
+  "homepage": "https://github.com/brocessing/bro-grass#readme",
+  "dependencies": {
+    "kool-shell": "github:pqml/kool-shell"
+  }
+}
