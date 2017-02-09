@@ -1,4 +1,4 @@
-<h1 align="center">Bro-grass</h1>
+<h1 align="center">git-gardener</h1>
 <h3 align="center">🌱🌱🌱 An automatic gardener which take care of your Github Grass™ 🌱🌱🌱 </h3>
 
 <div align="center">
@@ -18,6 +18,6 @@ Now, look at *this* :
 
 ![good-grass](github-grass-2.png)
 
-Bro-grass helps you keep your Github Grass™ **clean** and **green** !
+git-gardener helps you keep your Github Grass™ **clean** and **green** !
 
 ##Installation
