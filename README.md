@@ -19,5 +19,3 @@ Now, look at *this* :
 ![good-grass](github-grass-2.png)
 
 git-gardener helps you keep your Github Grass™ **clean** and **green** !
-
-##Installation

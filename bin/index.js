@@ -21,7 +21,6 @@ const graph = {
 
 graph.cells = new Array(graph.dateToIndex(graph.endDate));
 
-
 const logFile = 'bro-grass.log';
 
 // commit(graph.startDate, logFile);
