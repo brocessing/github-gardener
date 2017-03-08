@@ -18,22 +18,27 @@ function graph (opts = {}) {
 
   function render (cells = opts.cells) {
 
-    let columns = (even(process.stdout.columns) < 159)
-      ? even(process.stdout.columns) : 159
+    api.data.display = {
+      rows: 7,
+      columns: (even(process.stdout.columns) < 159)
+        ? even(process.stdout.columns) : 159,
+      cells: []
+    }
 
     for (let i = 0; i < opts.rows; i++) {
       let filteredCells = filter(cells, (o) => {
         return o.day === i
       })
 
-      filteredCells = filteredCells.slice(0, columns/2)
+      filteredCells = filteredCells.slice(0, api.data.display.columns/2)
+      api.data.display.cells.concat(filteredCells)
 
       let days = new String()
       for (let j in filteredCells) {
         days += `${filteredCells[j].day}︎ `
       }
 
-      if (i !== 6) days += `\n`
+      if (i !== opts.rows-1) days += `\n`
 
       process.stdout.write(days)
     }

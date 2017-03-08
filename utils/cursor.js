@@ -29,8 +29,13 @@ function cursor (opts = {}) {
     setPos,
     move,
     bounds,
-    startMove
+    listen
   }
+
+  setPos({
+    x: bounds().left,
+    y: bounds().up - 1
+  })
 
   function position (opts = {}) {
     return {
@@ -50,23 +55,21 @@ function cursor (opts = {}) {
   }
 
   function setPos (opts) {
-    if (opts.isBound && !isBound(opts)) return api
     readline.cursorTo(process.stdin, opts.x, opts.y)
     return api
   }
 
   function move (opts) {
-    // if (opts.isBound && !isBound(opts)) return api
     readline.moveCursor(process.stdin, opts.x, opts.y)
     return api
   }
 
   function bounds (opts) {
     return {
-      up:  api.data.start.y - api.data.rows,
+      up:  api.data.start.y - api.data.rows + 1,
       right: api.data.columns,
       down: api.data.start.y,
-      left: api.data.start.x
+      left: 0
     }
   }
 
@@ -76,7 +79,7 @@ function cursor (opts = {}) {
     return true
   }
 
-  function startMove (opts = MOVEMENTS) {
+  function listen (opts = MOVEMENTS) {
     process.stdin.on(`keypress`, (char, key) => {
       for (let movement of opts) {
         if (key.name === movement.name) {

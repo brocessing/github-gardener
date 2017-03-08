@@ -11,4 +11,4 @@ const graphUI = app.graph({
   })
   .render()
 
-const cursor = app.cursor(graphUI.data).startMove()
+const cursor = app.cursor(graphUI.data.display).listen()
